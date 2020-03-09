@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>Chat Group</title>
+    <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+    <div class="container">
+        <h1><center>MY MACHINE</h1>
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <div class="panel-title">Group Chat</div>
+                </div>
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" class="alert alert-danger col-sm-12"></div>
+                    <form class="form-horizontal" role="form" action="" method="POST">
+
+                        {% csrf_token %}
+
+                        <div style="margin-bottom: 25px" class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <textarea class="form-control" name="group" placeholder="Say something" required></textarea>
+                            <!-- <input id="chat" type="text" class="form-control" name="group" value="{{ group }}"
+                                placeholder="transaction date" required> -->
+                        </div>
+
+                        <div style="margin-top:10px" class="form-group">
+                            <div class="col-sm-12 controls">
+                                <center><button type="submit" id="btn-login" class="btn btn-success">submit</button></center>
+                                <!-- <a id="btn" href="#" class="btn btn-primary">{{ result }}</a> -->
+                                
+                            </div>
+                            <h1><center>Result :{{ result }}</h1>
+                            <h1><center>Corrected :{{ score }} of {{total}}</h1>
+                            <h1><center>Percentage :{{ percentage }}%</h1>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    </div>
+</body>
